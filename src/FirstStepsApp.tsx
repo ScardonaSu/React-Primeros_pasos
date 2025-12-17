@@ -1,7 +1,7 @@
 
 
 //Estructura de Componente
-export function FirstStepsApp (){
+export function MyAwasommeApp (){
 
     return (
 

@@ -1,15 +1,14 @@
 
-export const MyAwasommeApp = () => {
+export const MyAwesomeApp = () => {
 
-    const name = 'Santo'
-    const lastName = 'Cardona'
-
+    const firstName = "Santiago"
+    const lastName = "Cardona"
 
     return (
-         <>
-            <h1>{name}</h1>
-            <h3>{lastName}</h3>
-            <h2>Eres Fenomenal!!!</h2>
+
+        <>
+            <h1>{firstName}</h1>
+            <h2>{lastName}</h2>
         
         </>
 
