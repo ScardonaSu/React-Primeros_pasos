@@ -1,20 +1,18 @@
+import { ItemCounter } from "./shopping-card/itemCounter";
+
 
 
 //Estructura de Componente
-export function MyAwasommeApp (){
-
+export function FirstStepsApp (){
+    
     return (
 
     <>
-        <h1>Hola Mundo!!!</h1>
-        <p>Este es un parrafo</p>
+        <h1>Carrito de compras</h1>
 
-        <button>Click me</button>
-
-        <div>
-             <h2>Hola dentro de un div</h2>
-        </div>
-    
+        <ItemCounter name ="Nintengo Switch 2"></ItemCounter>
+        <ItemCounter name = "Pro Controller"></ItemCounter>
+        <ItemCounter name = "Super Smash" ></ItemCounter>
     </>
     )
 
