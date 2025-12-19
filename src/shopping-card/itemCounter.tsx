@@ -1,26 +1,62 @@
+import { useState } from "react"
+
+
+// import './itemCounter.css'
+
+import styles from './itemCounter.module.css'
+
 
 interface Props {
     name: string
+    quantity?: number
 }
 
 
-export const ItemCounter = ({name}: Props) => {
+export const ItemCounter = ({name, quantity = 1}: Props ) => {
+
+
+    const [count, setCount] = useState(quantity)
+
+    const handleAdd = () => {
+       
+
+        setCount(count + 1)
+    }
+
+    const handleSubtract = () => {
+        if(count === 1) return
+
+        setCount( prov => prov - 1)
+    }
+
+
+    const handleClick = ()=> {
+        console.log(`Click en ${name}`);
+        
+    }
+    
+
     return (
-        <section style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-            marginTop: 10
-        }}>
-            <span style={{
-                width: 150
+        <section 
+            className={ styles['item-row']}
+        // style={{
+        //     display: 'flex',
+        //     alignItems: 'center',
+        //     gap: 10,
+        //     marginTop: 10
+        // }}
+        >
+            <span 
+            className= {styles.itemText}
+            style={{
+                color: count === 1 ? 'red' : 'black'
             }} >{name}</span>
 
-            <button>+1</button>
+            <button onClick={handleAdd}>1</button>
 
-            <span>10</span>
+            <span>{count}</span>
 
-            <button>-1</button>
+            <button onClick={handleSubtract}>-1</button>
         </section>
     )
 }
