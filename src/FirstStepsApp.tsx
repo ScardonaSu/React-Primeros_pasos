@@ -7,41 +7,34 @@ interface ItemInCart {
     quantity: number
 }
 
+
+
 const itemsInCart: ItemInCart[] = [
 
-    {productName: 'Nintendo Switch 2', quantity: 1},
-    {productName: 'Pro Controller', quantity: 2},
-    {productName: 'Super Smash', quantity: 5}
+    { productName: 'Nintendo Switch 2', quantity: 1 },
+    { productName: 'Pro Controller', quantity: 2 },
+    { productName: 'Super Smash', quantity: 5 }
 ]
 
 
 
+
 //Estructura de Componente
-export function FirstStepsApp (){
-    
+export function FirstStepsApp() {
+
     return (
 
-    <>
-        <h1>Carrito de compras</h1>
+        <>
+            <h1>Carrito de compras</h1>
+            {
+                itemsInCart.map(({ productName, quantity }) => (
+                    <ItemCounter key={productName} name={productName} quantity={quantity}></ItemCounter>
+                ))
 
-        {
-            itemsInCart.map(({productName, quantity}) => (
-                <ItemCounter key={productName} name = {productName} quantity={quantity}></ItemCounter>
-            ))
+            }
+           
 
-
-            
-        }
-
-
-
-        {/* <ItemCounter name ="Nintengo Switch 2" quantity={1}></ItemCounter>
-        <ItemCounter name = "Pro Controller" quantity={2}></ItemCounter>
-        <ItemCounter name = "Super Smash" quantity={3}></ItemCounter> */}
-
-
-
-    </>
+        </>
     )
 
 }
